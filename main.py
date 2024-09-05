@@ -1,0 +1,60 @@
+from Neuron import Neuron 
+from Synapse import Synapse 
+
+# stworz neuron nr 1
+neuron1 = Neuron()
+
+# stworz do niego synapse nr 1 i daj wagę
+synapse1 = Synapse()
+synapse1.addWeight(2)
+neuron1.addOwnSynapse(synapse1)
+
+# stworz do niego synapse nr 2 i daj wagę
+synapse2 = Synapse()
+synapse2.addWeight(44)
+neuron1.addOwnSynapse(synapse2)
+
+# stworz neuron nr 2
+neuron2 = Neuron()
+
+# stworz do niego synapse nr 3 i daj wagę
+synapse3 = Synapse()
+synapse3.addWeight(-13)
+neuron2.addOwnSynapse(synapse3)
+
+# stworz do niego synapse nr 4 i daj wagę
+synapse4 = Synapse()
+synapse4.addWeight(-13)
+neuron2.addOwnSynapse(synapse4)
+
+# stworz neuron nr 3
+neuron3 = Neuron()
+
+
+# stworz do niego synapse nr 5 i daj wagę
+synapse5 = Synapse()
+synapse5.addWeight(6)
+neuron3.addOwnSynapse(synapse5)
+
+# stworz do niego synapse nr 6 i daj wagę
+synapse6 = Synapse()
+synapse6.addWeight(80)
+neuron3.addOwnSynapse(synapse6)
+
+# połącz neuron 1 z synapsą 5
+neuron1.connectToOuterSynapse(synapse5)
+# połącz neuron 2 z synapsą 6
+neuron2.connectToOuterSynapse(synapse6)
+
+# zapodaj te same sygnały neuronom 1 i 2
+synapse1.loadSignal(10)
+synapse2.loadSignal(217)
+synapse3.loadSignal(10)
+synapse4.loadSignal(217)
+
+# wyświetl  output neurona nr 3
+output = neuron3.output
+
+neuron1.showOwnDetails()
+neuron2.showOwnDetails()
+neuron3.showOwnDetails()
