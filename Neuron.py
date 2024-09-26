@@ -24,19 +24,18 @@ class Neuron:
     neuronInputs = []
     #sprawdz czy własne synapsy są podłączone do innych neuronów
     for synapse in self.synapses:
+      print(f"Neuron synapse id-{synapse.getID()}")
       if synapse.outerNeuron != None: # czyli podąłczony do zewnetrznej synapsy
-        neuronInputs.append(synapse.outerNeuron.calculateOutput())
-      else: # jesli nie podłączony, oblicz sume swoich synaps
-        neuronInputs.append(synapse.calculateOutput())
-    
-    # ok poniżej
-    print(self.synapses)
-    
-    #print(synapse.calculateOutput())
-    #  print(f"neuronInputs-{neuronInputs}")
-    
+        print ("podąłczony do zewnetrznej synapsy") 
+        print (f"neuronInputs:{neuronInputs}") 
+        print (f"synapse.weight:{synapse.weight}") 
+        neuronInputs.append(synapse.outerNeuron.calculateOutput() * synapse.weight)
+      else: 
+        # jesli nie podłączony, oblicz sume swoich synaps
+        print ("eeeeeeelse")
+        neuronInputs.append(synapse.calculateInputForNeuron())
+        
     # flatten array (sum) 
-    # print(f"aaa: {neuronInputs}")
     itemsSum = np.sum(np.array(neuronInputs))
     print(f"itemsSum: {itemsSum}")
 

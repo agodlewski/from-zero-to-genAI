@@ -11,7 +11,7 @@ neuron1.addOwnSynapse(synapse1)
 
 # stworz do niego synapse nr 2 i daj wagę
 synapse2 = Synapse()
-synapse2.addWeight(2)
+synapse2.addWeight(1)
 neuron1.addOwnSynapse(synapse2)
 
 # stworz neuron nr 2
@@ -19,12 +19,12 @@ neuron2 = Neuron()
 
 # stworz do niego synapse nr 3 i daj wagę
 synapse3 = Synapse()
-synapse3.addWeight(3)
+synapse3.addWeight(1)
 neuron2.addOwnSynapse(synapse3)
 
 # stworz do niego synapse nr 4 i daj wagę
 synapse4 = Synapse()
-synapse4.addWeight(4)
+synapse4.addWeight(1)
 neuron2.addOwnSynapse(synapse4)
 
 # stworz neuron nr 3
@@ -48,13 +48,13 @@ neuron2.connectToOuterSynapse(synapse6)
 
 # zapodaj te same sygnały neuronom 1 i 2
 synapse1.loadSignal(1)
-synapse2.loadSignal(2)
-synapse3.loadSignal(3)
-synapse4.loadSignal(4)
+synapse2.loadSignal(1)
+synapse3.loadSignal(1)
+synapse4.loadSignal(1)
 
 # wyświetl output neurona nr 3
-neuron2.calculateOutput()
-print(f"output: {neuron3.calculateOutput()}")
+output = neuron3.calculateOutput()
+print(f"output: {output}")
 
 #neuron1.showDetails()
 #neuron2.showDetails()
