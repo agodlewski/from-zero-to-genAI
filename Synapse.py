@@ -1,5 +1,5 @@
 class Synapse:
-  _counter = 0
+  _counter = 1
 
   def __init__(self):
       self.weight = None
@@ -21,5 +21,24 @@ class Synapse:
   def addOwnNeuron(self, ownNeuron):
      self.ownNeuron = ownNeuron
 
-  def showOwnDetails(self):
-    print(f" I'm synapse number {self.id}")
+  def calculateOutput(self):
+    # jesli ma sygnał jest pierwsza, może obliczyć wynik
+    if self.outerNeuron == None:
+      print(f"if, self.outerNeuron == none")
+      return self.signal * self.weight
+    # jest podłączona do neurona, bierze wynik od niego
+    else: #self.outerNeuron != None: # <- nie wchodzi w tego ifa
+      print("else")
+      return self.outerNeuron.calculateOutput()
+
+
+  def getID(self):
+    return self.id
+  
+  def showDetails(self):
+    print(f"I'm synapse number {self.getID()}")
+  
+  
+  def showNeurons(self):
+    print(f"(neuron {self.outerNeuron.getID()}) >-- [synapse {self.getID()} --> (neuron {self.ownNeuron.getID()})]") 
+   
