@@ -22,16 +22,10 @@ class Synapse:
      self.ownNeuron = ownNeuron
 
   def calculateInputForNeuron(self):
-    print(f"Synapse id-{self.getID()}")
-    # jesli ma sygnał jest pierwsza, może obliczyć wynik
+    #print(f"Synapse id-{self.getID()}")
     #if self.outerNeuron == None:
-    print(f"if= {self.signal * self.weight}")
+    #print(f"if= {self.signal * self.weight}")
     return self.signal * self.weight
-    # jest podłączona do neurona, bierze wynik od niego
-    #else:
-    #  print("---------------else")
-    #  return self.outerNeuron.calculateOutput() * self.weight
-
 
   def getID(self):
     return self.id
