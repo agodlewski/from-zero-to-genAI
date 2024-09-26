@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+ 
 import numpy as np
 
 class Neuron:
@@ -17,32 +19,6 @@ class Neuron:
   def connectToOuterSynapse(self, outerSynapse):
     outerSynapse.connectToOuterNeuron(self)
     self.outerSynapses.append(outerSynapse)
-
-  def calculateOutput(self):
-    neuronInputs = []
-    #sprawdz czy własne synapsy są podłączone do innych neuronów
-    for synapse in self.synapses:
-      if synapse.outerNeuron != None: # czyli podąłczony do zewnetrznej synapsy
-        neuronInputs.append(synapse.outerNeuron.calculateOutput())
-      else: # jesli nie podłączony, oblicz sume swoich synaps
-        neuronInputs.append(synapse.calculateOutput())
-    
-    # ok poniżej
-    print(self.synapses)
-    
-    #print(synapse.calculateOutput())
-    #  print(f"neuronInputs-{neuronInputs}")
-    
-    # flatten array (sum) 
-    # print(f"aaa: {neuronInputs}")
-    itemsSum = np.sum(np.array(neuronInputs))
-    print(f"itemsSum: {itemsSum}")
-
-    # run it through ReLu function
-    resultReLu = np.maximum(0, itemsSum)
-    print(f"resultReLu: {resultReLu}")
-    return resultReLu
-        
 
   def getID(self):
     return self.id

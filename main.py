@@ -52,13 +52,9 @@ synapse2.loadSignal(2)
 synapse3.loadSignal(3)
 synapse4.loadSignal(4)
 
-# wyświetl output neurona nr 3
-neuron2.calculateOutput()
-print(f"output: {neuron3.calculateOutput()}")
+neuron1.showDetails()
+neuron2.showDetails()
+neuron3.showDetails()
 
-#neuron1.showDetails()
-#neuron2.showDetails()
-#neuron3.showDetails()
-
-#synapse5.showNeurons()
-#neuron2.showSynapses()
+synapse5.showNeurons()
+neuron2.showSynapses()
