@@ -54,7 +54,7 @@ synapse4.loadSignal(1)
 
 # wyświetl output neurona nr 3
 output = neuron3.calculateOutput()
-print(f"output: {output}")
+print(f"neuron3: {output}")
 
 #neuron1.showDetails()
 #neuron2.showDetails()

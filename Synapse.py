@@ -22,9 +22,6 @@ class Synapse:
      self.ownNeuron = ownNeuron
 
   def calculateInputForNeuron(self):
-    #print(f"Synapse id-{self.getID()}")
-    #if self.outerNeuron == None:
-    #print(f"if= {self.signal * self.weight}")
     return self.signal * self.weight
 
   def getID(self):
@@ -32,7 +29,6 @@ class Synapse:
   
   def showDetails(self):
     print(f"I'm synapse number {self.getID()}")
-  
   
   def showNeurons(self):
     print(f"(neuron {self.outerNeuron.getID()}) >-- [synapse {self.getID()} --> (neuron {self.ownNeuron.getID()})]") 

@@ -24,11 +24,7 @@ class Neuron:
     neuronInputs = []
     #sprawdz czy własne synapsy są podłączone do innych neuronów
     for synapse in self.synapses:
-    #print(f"Neuron synapse id-{synapse.getID()}")
       if synapse.outerNeuron != None: # czyli podąłczony do zewnetrznej synapsy
-        #print ("podąłczony do zewnetrznej synapsy") 
-        #print (f"neuronInputs:{neuronInputs}") 
-        #print (f"synapse.weight:{synapse.weight}") 
         neuronInputs.append(synapse.outerNeuron.calculateOutput() * synapse.weight)
       else: 
         # jesli nie podłączony, oblicz sume swoich synaps
@@ -36,14 +32,12 @@ class Neuron:
         
     # flatten array (sum) 
     itemsSum = np.sum(np.array(neuronInputs))
-    #print(f"itemsSum: {itemsSum}")
 
     # run it through ReLu function
     resultReLu = np.maximum(0, itemsSum)
-    print(f"resultReLu: {resultReLu}")
+    print(f"neuron nr {self.getID()} - output: {resultReLu}")
     return resultReLu
         
-
   def getID(self):
     return self.id
   
